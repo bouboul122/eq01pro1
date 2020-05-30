@@ -19,15 +19,15 @@ import model.AccumulationPowerElement;
 import model.ConversionPowerMonoElement;
 import model.ConversionPowerMultiElement;
 import model.CouplingPowerMonoElement;
-<<<<<<< Updated upstream
+
 import model.CouplingPowerMultiElement;
-=======
+
 import model.InversionAccumulationControlElement;
 import model.InversionAmplificationControlElementGreater;
 import model.InversionAmplificationControlElementLower;
 import model.InversionConversionControlElement;
 import model.InversionCouplingControlElement;
->>>>>>> Stashed changes
+
 import model.Source;
 
 public class EMRDrawer extends Application {
