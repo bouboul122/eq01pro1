@@ -19,6 +19,7 @@ import model.AccumulationPowerElement;
 import model.ConversionPowerMonoElement;
 import model.ConversionPowerMultiElement;
 import model.CouplingPowerMonoElement;
+import model.CouplingPowerMultiElement;
 import model.Source;
 
 public class EMRDrawer extends Application {
@@ -33,7 +34,7 @@ public class EMRDrawer extends Application {
     	borderpane.setBottom(new Label("Welcome to the drawing board"));
     	borderpane.setCenter(drawingBoard);
     	
-    	CouplingPowerMonoElement element = new CouplingPowerMonoElement(300, 300, "#FFD700", "#FF0000");
+    	CouplingPowerMultiElement element = new CouplingPowerMultiElement(300, 300, "#FFD700", "#FF0000");
     	drawingBoard.getChildren().add(element.createShape());
 		
 		Scene scene = new Scene(borderpane);

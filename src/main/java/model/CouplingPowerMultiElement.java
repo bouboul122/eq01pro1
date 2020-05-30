@@ -1,5 +1,6 @@
 package model;
 
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Shape;
 
 public class CouplingPowerMultiElement extends ShapeEMR{
@@ -13,9 +14,13 @@ public class CouplingPowerMultiElement extends ShapeEMR{
 		ConversionPowerMultiElement elementTop = new ConversionPowerMultiElement(this.xCoordinate, this.yCoordinate, 
 				this.mainColor, this.borderColor);
 		ConversionPowerMultiElement elementBottom = new ConversionPowerMultiElement(
-				this.xCoordinate + (2*elementTop.getRadius()/3), this.yCoordinate + (2*elementTop.getRadius()/3), 
+				this.xCoordinate, this.yCoordinate + (2*elementTop.getRadius()/3), 
 				this.mainColor, this.borderColor);
-		return null;
+		
+		Shape shape = Shape.union(elementTop.createShape(), elementBottom.createShape());
+		shape.setFill(Color.web(this.mainColor));
+		shape.setStroke(Color.web(this.borderColor));
+		return shape;
 	}
 
 }
