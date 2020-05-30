@@ -18,6 +18,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import model.AccumulationPowerElement;
+import model.ArrowV1;
 import model.ControlStrategyElement;
 import model.ConversionPowerMonoElement;
 import model.ConversionPowerMultiElement;
@@ -104,7 +105,8 @@ public class EMRDrawer extends Application {
 				new InversionCouplingControlElement(300, 300, "#87CEEB","#0000FF").createShape(),
 				new InversionAmplificationControlElementGreater(300, 300, "#87CEEB","#0000FF").createShape(),
 				new InversionAmplificationControlElementLower(300, 300, "#87CEEB","#0000FF").createShape(),
-				new ControlStrategyElement(300,300,"#0000FF","#0000FF").createShape()));
+				new ControlStrategyElement(300,300,"#0000FF","#0000FF").createShape(),
+				new ArrowV1(0,0,10,0,5)));
 		
 		TitledPane estimation = new TitledPane("Estimation", new VBox());
 		Accordion accordion = new Accordion();
