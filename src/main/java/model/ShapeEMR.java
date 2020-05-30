@@ -6,11 +6,15 @@ public abstract class ShapeEMR {
 	
 	double xCoordinate;
 	double yCoordinate;
+	String mainColor;
+	String borderColor;
 	
-	ShapeEMR (double xCoordinate, double yCoordinate)
+	ShapeEMR (double xCoordinate, double yCoordinate, String mainColor, String borderColor)
 	{
 		this.xCoordinate = xCoordinate;
 		this.yCoordinate = yCoordinate;
+		this.mainColor = mainColor;
+		this.borderColor = borderColor;
 	}
 	
 	

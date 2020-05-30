@@ -11,21 +11,32 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.Separator;
 import javafx.scene.control.TitledPane;
 import javafx.scene.control.ToolBar;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import model.AccumulationPowerElement;
+import model.ConversionPowerMonoElement;
+import model.ConversionPowerMultiElement;
+import model.CouplingPowerMonoElement;
+import model.Source;
 
 public class EMRDrawer extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
     	
+    	AnchorPane drawingBoard = new AnchorPane();
     	BorderPane borderpane = new BorderPane();
     	borderpane.setTop(addTop());
     	borderpane.setLeft(addShapeMenu());
     	borderpane.setBottom(new Label("Welcome to the drawing board"));
+    	borderpane.setCenter(drawingBoard);
     	
-    	Scene scene = new Scene(borderpane);
+    	CouplingPowerMonoElement element = new CouplingPowerMonoElement(300, 300, "#FFD700", "#FF0000");
+    	drawingBoard.getChildren().add(element.createShape());
+		
+		Scene scene = new Scene(borderpane);
 		stage.setScene(scene);
 		stage.setTitle("EMR Drawer");
 		stage.show();
@@ -56,7 +67,11 @@ public class EMRDrawer extends Application {
     
     private Node addShapeMenu() {
 
-		TitledPane power = new TitledPane("Power", new VBox());
+		TitledPane power = new TitledPane("Power", new VBox(new Source(300, 300, "#98FB98", "#008000").createShape(),
+				new AccumulationPowerElement(300, 300, "#FFD700", "#FF0000").createShape(),
+				new ConversionPowerMonoElement(300, 300, "#FFD700", "#FF0000").createShape(),
+				new ConversionPowerMultiElement(300, 300, "#FFD700", "#FF0000").createShape(),
+				new CouplingPowerMonoElement(300, 300, "#FFD700", "#FF0000").createShape()));
 		TitledPane control = new TitledPane("Control", new VBox());
 		TitledPane estimation = new TitledPane("Estimation", new VBox());
 		Accordion accordion = new Accordion();
