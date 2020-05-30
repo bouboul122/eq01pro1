@@ -64,12 +64,12 @@
             <ToolBar prefHeight="71.0" prefWidth="401.0">
                <items>
                   <Label text="Tools" />
-                  <Button mnemonicParsing="false" text="Delete" />
-                  <Button mnemonicParsing="false" text="Move" />
+                  <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteButtonClicked" text="Delete" />
+                  <Button fx:id="moveButton" mnemonicParsing="false" onAction="#moveButtonClicked" text="Move" />
                   <Label text="Simulator" />
-                  <Button mnemonicParsing="false" text="Simulate" />
+                  <Button fx:id="simulateButton" mnemonicParsing="false" onAction="#simulateButtonClicked" text="Simulate" />
                   <Label text="Allignement" />
-                  <Button mnemonicParsing="false" text="Top" />
+                  <Button fx:id="alignButton" mnemonicParsing="false" onAction="#alignButtonClicked" text="Top" />
                </items>
             </ToolBar>
          </children>
