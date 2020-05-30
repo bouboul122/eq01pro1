@@ -39,20 +39,6 @@ public class EMRDrawer extends Application {
     	borderpane.setBottom(new Label("Welcome to the drawing board"));
     	borderpane.setCenter(drawingBoard);
     	
-    	//TEST
-    	
-    	//Circle c1 = new Circle();
-    	
-    	//Arc arc = new Arc();
-    	//arc.setCenterX(50.0f);
-    	//arc.setCenterY(50.0f);
-    	//arc.setRadiusX(25.0f);
-    	//arc.setRadiusY(25.0f);
-    	//arc.setStartAngle(45.0f);
-    	//arc.setLength(270.0f);
-    	//arc.setType(ArcType.CHORD);
-		
-		//drawingBoard.getChildren().add(arc);
 		
 		Scene scene = new Scene(borderpane);
 		stage.setScene(scene);
