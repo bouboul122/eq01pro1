@@ -14,12 +14,17 @@ import javafx.scene.control.ToolBar;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.shape.Arc;
+import javafx.scene.shape.ArcType;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import model.AccumulationPowerElement;
 import model.ConversionPowerMonoElement;
 import model.ConversionPowerMultiElement;
 import model.CouplingPowerMonoElement;
 import model.CouplingPowerMultiElement;
+import model.PowerAmplificationGreaterElement;
+import model.PowerAmplificationLowerElement;
 import model.Source;
 
 public class EMRDrawer extends Application {
@@ -34,8 +39,20 @@ public class EMRDrawer extends Application {
     	borderpane.setBottom(new Label("Welcome to the drawing board"));
     	borderpane.setCenter(drawingBoard);
     	
-    	CouplingPowerMultiElement element = new CouplingPowerMultiElement(300, 300, "#FFD700", "#FF0000");
-    	drawingBoard.getChildren().add(element.createShape());
+    	//TEST
+    	
+    	//Circle c1 = new Circle();
+    	
+    	//Arc arc = new Arc();
+    	//arc.setCenterX(50.0f);
+    	//arc.setCenterY(50.0f);
+    	//arc.setRadiusX(25.0f);
+    	//arc.setRadiusY(25.0f);
+    	//arc.setStartAngle(45.0f);
+    	//arc.setLength(270.0f);
+    	//arc.setType(ArcType.CHORD);
+		
+		//drawingBoard.getChildren().add(arc);
 		
 		Scene scene = new Scene(borderpane);
 		stage.setScene(scene);
@@ -72,7 +89,10 @@ public class EMRDrawer extends Application {
 				new AccumulationPowerElement(300, 300, "#FFD700", "#FF0000").createShape(),
 				new ConversionPowerMonoElement(300, 300, "#FFD700", "#FF0000").createShape(),
 				new ConversionPowerMultiElement(300, 300, "#FFD700", "#FF0000").createShape(),
-				new CouplingPowerMonoElement(300, 300, "#FFD700", "#FF0000").createShape()));
+				new CouplingPowerMonoElement(300, 300, "#FFD700", "#FF0000").createShape(),
+				new CouplingPowerMultiElement(300, 300, "#FFD700", "#FF0000").createShape(),
+				new PowerAmplificationLowerElement(300, 300, "#FFD700", "#FF0000").createShape(),
+				new PowerAmplificationGreaterElement(300, 300, "#FFD700", "#FF0000").createShape()));
 		TitledPane control = new TitledPane("Control", new VBox());
 		TitledPane estimation = new TitledPane("Estimation", new VBox());
 		Accordion accordion = new Accordion();
