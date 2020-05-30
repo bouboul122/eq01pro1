@@ -19,7 +19,15 @@ import model.AccumulationPowerElement;
 import model.ConversionPowerMonoElement;
 import model.ConversionPowerMultiElement;
 import model.CouplingPowerMonoElement;
+<<<<<<< Updated upstream
 import model.CouplingPowerMultiElement;
+=======
+import model.InversionAccumulationControlElement;
+import model.InversionAmplificationControlElementGreater;
+import model.InversionAmplificationControlElementLower;
+import model.InversionConversionControlElement;
+import model.InversionCouplingControlElement;
+>>>>>>> Stashed changes
 import model.Source;
 
 public class EMRDrawer extends Application {
@@ -73,7 +81,13 @@ public class EMRDrawer extends Application {
 				new ConversionPowerMonoElement(300, 300, "#FFD700", "#FF0000").createShape(),
 				new ConversionPowerMultiElement(300, 300, "#FFD700", "#FF0000").createShape(),
 				new CouplingPowerMonoElement(300, 300, "#FFD700", "#FF0000").createShape()));
-		TitledPane control = new TitledPane("Control", new VBox());
+			
+		TitledPane control = new TitledPane("Control", new VBox(new InversionConversionControlElement(300, 300, "#87CEEB","#0000FF").createShape(),
+				new InversionAccumulationControlElement(300, 300, "#87CEEB","#0000FF").createShape(),
+				new InversionCouplingControlElement(300, 300, "#87CEEB","#0000FF").createShape(),
+				new InversionAmplificationControlElementGreater(300, 300, "#87CEEB","#0000FF").createShape(),
+				new InversionAmplificationControlElementLower(300, 300, "#87CEEB","#0000FF").createShape()));
+		
 		TitledPane estimation = new TitledPane("Estimation", new VBox());
 		Accordion accordion = new Accordion();
 		accordion.getPanes().addAll(power, control, estimation);
