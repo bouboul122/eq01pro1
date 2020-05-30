@@ -1,5 +1,6 @@
 package model;
 
+import javafx.scene.paint.Paint;
 import javafx.scene.shape.Shape;
 
 public abstract class ShapeEMR {
