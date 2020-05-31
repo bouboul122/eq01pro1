@@ -102,6 +102,8 @@ public class EMRController {
 		estimationVbox.getChildren().add(shapeFactory.getShape(ShapeEMRFactory.eshape.amplificationGreaterEstimation, 0, 0, "#EE82EE", "#0000FF").createShape());
 		estimationVbox.getChildren().add(shapeFactory.getShape(ShapeEMRFactory.eshape.amplificationLowerEstimation, 0, 0, "#EE82EE", "#0000FF").createShape());
 		
+		arrowVbox.getChildren().add(shapeFactory.getShape(ShapeEMRFactory.eshape.arrowV1, 0, 0, "#060606", "#060606").createShape());
+		
 		powerSource.setOnDragDetected(new EventHandler<MouseEvent>() {
 		    public void handle(MouseEvent event) {
 		        /* drag was detected, start a drag-and-drop gesture*/
