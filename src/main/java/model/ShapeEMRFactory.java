@@ -26,7 +26,8 @@ public class ShapeEMRFactory {
 		couplingMultiEstimation,
 		couplingMonoEstimation,
 		amplificationGreaterEstimation,
-		amplificationLowerEstimation		
+		amplificationLowerEstimation,
+		arrowV1
 	};
 	
 	public ShapeEMR getShape(eshape element, double xCoord, double yCoord, String mainColor, String borderColor)
@@ -98,6 +99,9 @@ public class ShapeEMRFactory {
 			break;
 		case amplificationLowerEstimation:
 			shape = new PowerAmplificationLowerElement(xCoord, yCoord, mainColor, borderColor);
+			break;
+		case arrowV1:
+			shape = new ArrowV1(xCoord, yCoord, mainColor, borderColor);
 			break;
 		default:
 			shape = null;

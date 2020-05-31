@@ -4,10 +4,41 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.LineTo;
 import javafx.scene.shape.MoveTo;
 import javafx.scene.shape.Path;
+import javafx.scene.shape.Polyline;
+import javafx.scene.shape.Shape;
 
 
-public class ArrowV1 extends Path{
-    private static final double defaultArrowHeadSize = 5.0;
+public class ArrowV1 extends ShapeEMR{
+
+	ArrowV1(double xCoordinate, double yCoordinate, String mainColor, String borderColor) {
+		super(xCoordinate, yCoordinate, mainColor, borderColor);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public Shape createShape() {
+		// TODO Auto-generated method stub
+		
+		Polyline line = new Polyline();
+		
+		line.getPoints().addAll(new Double[]{
+			    xCoordinate, yCoordinate,
+			    xCoordinate + 30.0, yCoordinate + 0.0,
+			    xCoordinate + 27.0, yCoordinate + 5.0,
+			    xCoordinate + 27.0, yCoordinate - 5.0,
+			    xCoordinate + 30.0, yCoordinate + 0.0,});
+		line.setFill(Color.web(mainColor));
+		line.setStroke(Color.web(borderColor));
+		
+		return line;
+		
+	}
+	
+	
+	
+	
+	
+    /*private static final double defaultArrowHeadSize = 5.0;
     
     public ArrowV1(double startX, double startY, double endX, double endY, double arrowHeadSize){
         super();
@@ -37,4 +68,10 @@ public class ArrowV1 extends Path{
     public ArrowV1(double startX, double startY, double endX, double endY){
         this(startX, startY, endX, endY, defaultArrowHeadSize);
     }
+
+	@Override
+	public Shape createShape() {
+		
+		return null;
+	}*/
 }
