@@ -78,6 +78,9 @@ public class EMRController {
 		
 		
 		//Adding in the control VBox//
+		controlVbox.setSpacing(10);
+	    controlVbox.setAlignment(Pos.TOP_CENTER);
+	     
 		controlVbox.getChildren().add(shapeFactory.getShape(ShapeEMRFactory.eshape.accumulationInversion, 0, 0, "#87CEEB", "#0000FF").createShape());
 		controlVbox.getChildren().add(shapeFactory.getShape(ShapeEMRFactory.eshape.amplificationGreaterInversion, 0, 0, "#87CEEB", "#0000FF").createShape());
 		controlVbox.getChildren().add(shapeFactory.getShape(ShapeEMRFactory.eshape.amplificationLowerInversion, 0, 0, "#87CEEB", "#0000FF").createShape());
@@ -86,7 +89,10 @@ public class EMRController {
 		controlVbox.getChildren().add(shapeFactory.getShape(ShapeEMRFactory.eshape.amplificationLowerPower, 0, 0, "#87CEEB", "#0000FF").createShape());
 		controlVbox.getChildren().add(shapeFactory.getShape(ShapeEMRFactory.eshape.controlStrategy, 0, 0, "#0000FF", "#0000FF").createShape());
 		
-		//Adding in the power VBox//
+		//Adding in the estimation VBox//
+		estimationVbox.setSpacing(10);
+	    estimationVbox.setAlignment(Pos.TOP_CENTER);
+	    
 		estimationVbox.getChildren().add(shapeFactory.getShape(ShapeEMRFactory.eshape.sourceEstimation, 0, 0, "#EE82EE", "#0000FF").createShape());
 		estimationVbox.getChildren().add(shapeFactory.getShape(ShapeEMRFactory.eshape.accumulationEstimation, 0, 0, "#EE82EE", "#0000FF").createShape());
 		estimationVbox.getChildren().add(shapeFactory.getShape(ShapeEMRFactory.eshape.conversionMonoEstimation, 0, 0, "#EE82EE", "#0000FF").createShape());
@@ -168,8 +174,11 @@ public class EMRController {
 		        	System.out.println(content.getString());
 		        	if (content.getString().equals("PowerSource")){
 		        		Shape newPowerSource = shapeFactory.getShape(ShapeEMRFactory.eshape.sourcePower, event.getX(), 
-		        				event.getY(), "#98FB98", "#008000").createShape(); 
-		        		drawingBoard.getChildren().add(newPowerSource);
+		        				event.getY(), "#98FB98", "#008000").createShape();
+		        		Label source = new Label("Source");
+		        		source.setLayoutX(event.getX()- 15);
+		        		source.setLayoutY(event.getY() - 10);
+		        		drawingBoard.getChildren().addAll(newPowerSource, source);
 		        		statusLabel.setText("Dropped");
 		        		success = true;
 		        	} else if (content.getString().equals("accumulationPower")){
