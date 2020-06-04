@@ -34,6 +34,7 @@ public class EMRController {
 	Shape couplingMultiPower = shapeFactory.getShape(ShapeEMRFactory.eshape.couplingMultiPower, 0, 0, "#FFD700", "#FF0000").createShape();
 	Shape amplificationGreaterPower = shapeFactory.getShape(ShapeEMRFactory.eshape.amplificationGreaterPower, 0, 0, "#FFD700", "#FF0000").createShape();
 	Shape amplificationLowerPower = shapeFactory.getShape(ShapeEMRFactory.eshape.amplificationLowerPower, 0, 0, "#FFD700", "#FF0000").createShape();
+	Shape arrow = shapeFactory.getShape(ShapeEMRFactory.eshape.arrowV1, 0, 0, "#060606", "#060606").createShape();
 	
 	@FXML
 	Pane drawingBoard = new Pane();
@@ -102,7 +103,7 @@ public class EMRController {
 		estimationVbox.getChildren().add(shapeFactory.getShape(ShapeEMRFactory.eshape.amplificationGreaterEstimation, 0, 0, "#EE82EE", "#0000FF").createShape());
 		estimationVbox.getChildren().add(shapeFactory.getShape(ShapeEMRFactory.eshape.amplificationLowerEstimation, 0, 0, "#EE82EE", "#0000FF").createShape());
 		
-		arrowVbox.getChildren().add(shapeFactory.getShape(ShapeEMRFactory.eshape.arrowV1, 0, 0, "#060606", "#060606").createShape());
+		arrowVbox.getChildren().add(arrow);
 		
 		powerSource.setOnDragDetected(new EventHandler<MouseEvent>() {
 		    public void handle(MouseEvent event) {
@@ -142,6 +143,21 @@ public class EMRController {
 		        
 		        /* Put a string on a dragboard */
 		        content.putString("couplingMonoPower");
+		        statusLabel.setText(content.getString());
+		        db.setContent(content);
+		        
+		        event.consume();
+		    }
+		});
+		
+		arrow.setOnDragDetected(new EventHandler<MouseEvent>() {
+		    public void handle(MouseEvent event) {
+		        /* drag was detected, start a drag-and-drop gesture*/
+		        /* allow any transfer mode */
+		        db = powerSource.startDragAndDrop(TransferMode.ANY);
+		        
+		        /* Put a string on a dragboard */
+		        content.putString("Arrow");
 		        statusLabel.setText(content.getString());
 		        db.setContent(content);
 		        
@@ -193,6 +209,12 @@ public class EMRController {
 		        		Shape newCoupMonoPower = shapeFactory.getShape(ShapeEMRFactory.eshape.couplingMonoPower, event.getX(), 
 		        				event.getY(), "#FFD700", "#FF0000").createShape();
 		        		drawingBoard.getChildren().add(newCoupMonoPower);
+		        		statusLabel.setText("Dropped");
+		        		success = true;
+		        	} else if (content.getString().equals("Arrow")){
+		        		Shape newArrow = shapeFactory.getShape(ShapeEMRFactory.eshape.arrowV1, event.getX(), 
+		        				event.getY(), "#060606", "#060606").createShape();
+		        		drawingBoard.getChildren().add(newArrow);
 		        		statusLabel.setText("Dropped");
 		        		success = true;
 		        	} 

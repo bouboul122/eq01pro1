@@ -19,7 +19,6 @@ public abstract class ShapeEMR {
 	}
 	
 	
-	
 	public double getxCoordinate() {
 		return xCoordinate;
 	}
