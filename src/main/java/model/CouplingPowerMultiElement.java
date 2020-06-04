@@ -1,6 +1,14 @@
 package model;
 
 import javafx.scene.paint.Color;
+
+/*
+ * Cette classe fait partie du modele de conception Factory avec la classe ShapeEMR et ShapeEMRFactory ainsi que toutes
+ * autres formes concretes.
+ * 
+ * Elle fait aussi partie du modele dans le modele de conception MVC
+ */
+
 import javafx.scene.shape.Arc;
 import javafx.scene.shape.ArcType;
 import javafx.scene.shape.Shape;

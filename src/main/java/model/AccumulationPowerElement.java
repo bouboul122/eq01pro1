@@ -5,6 +5,12 @@ import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
+/*
+ * Cette classe fait partie du modele de conception Factory avec la classe ShapeEMR et ShapeEMRFactory ainsi que toutes
+ * autres formes concretes.
+ * 
+ * Elle fait aussi partie du modele dans le modele de conception MVC
+ */
 public class AccumulationPowerElement extends ShapeEMR{
 
 	public AccumulationPowerElement(double xCoordinate, double yCoordinate, String mainColor, String borderColor) {

@@ -1,6 +1,11 @@
 package model;
 
-
+/*
+ * Cette classe fait partie du modele de conception Factory. Toutes les autres classes de formes ainsi que la classe
+ * abstraite ShapeEMR en fait aussi partie.
+ * 
+ * Elle fait aussi partie du modele dans le modele de conception MVC
+ */
 
 public class ShapeEMRFactory{
 	

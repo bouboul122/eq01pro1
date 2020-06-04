@@ -5,7 +5,12 @@ import javafx.scene.shape.Polygon;
 
 import javafx.scene.shape.Shape;
 
-
+/*
+ * Cette classe fait partie du modele de conception Factory avec la classe ShapeEMR et ShapeEMRFactory ainsi que toutes
+ * autres formes concretes.
+ * 
+ * Elle fait aussi partie du modele dans le modele de conception MVC
+ */
 
 public class InversionConversionControlElement extends ShapeEMR{
 	

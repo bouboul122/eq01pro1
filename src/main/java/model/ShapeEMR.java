@@ -3,6 +3,12 @@ package model;
 
 import javafx.scene.shape.Shape;
 
+/*
+ * Cette classe fait partie du modele de conception Factory avec la classe ShapeEMRFactory et toutes les formes concretes
+ * 
+ * Elle fait aussi partie du package modele dans le modele de conception MVC
+ */
+
 public abstract class ShapeEMR {
 	
 	double xCoordinate;

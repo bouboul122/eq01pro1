@@ -33,6 +33,9 @@ import model.InversionConversionControlElement;
 import model.InversionCouplingControlElement;
 import model.Source;
 
+/*
+ * Cette classe contient la vue dans le modele MVC
+ */
 public class EMRDrawer extends Application {
 	
     @Override

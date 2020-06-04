@@ -5,6 +5,13 @@ import javafx.scene.shape.Line;
 import javafx.scene.shape.Polyline;
 import javafx.scene.shape.Shape;
 
+/*
+ * Cette classe fait partie du modele de conception Factory avec la classe ShapeEMR et ShapeEMRFactory ainsi que toutes
+ * autres formes concretes.
+ * 
+ * Elle fait aussi partie du modele dans le modele de conception MVC
+ */
+
 public class InversionAccumulationControlElement extends ShapeEMR{
 
 	public InversionAccumulationControlElement(double xCoordinate, double yCoordinate, String mainColor, String borderColor) {

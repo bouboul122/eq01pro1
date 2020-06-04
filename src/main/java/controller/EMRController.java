@@ -20,6 +20,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 
+/*
+ * Cette classe fait partie du controlleur dans le modele de conception MVC
+ */
+
 public class EMRController {
 	
 	ShapeEMRFactory shapeFactory = new ShapeEMRFactory();
@@ -135,6 +139,36 @@ public class EMRController {
 		    }
 		});
 		
+		conversionMonoPower.setOnDragDetected(new EventHandler<MouseEvent>() {
+		    public void handle(MouseEvent event) {
+		        /* drag was detected, start a drag-and-drop gesture*/
+		        /* allow any transfer mode */
+		        db = conversionMonoPower.startDragAndDrop(TransferMode.ANY);
+		        
+		        /* Put a string on a dragboard */
+		        content.putString("conversionMonoPower");
+		        statusLabel.setText(content.getString());
+		        db.setContent(content);
+		        
+		        event.consume();
+		    }
+		});
+		
+		conversionMultiPower.setOnDragDetected(new EventHandler<MouseEvent>() {
+		    public void handle(MouseEvent event) {
+		        /* drag was detected, start a drag-and-drop gesture*/
+		        /* allow any transfer mode */
+		        db = conversionMultiPower.startDragAndDrop(TransferMode.ANY);
+		        
+		        /* Put a string on a dragboard */
+		        content.putString("conversionMultiPower");
+		        statusLabel.setText(content.getString());
+		        db.setContent(content);
+		        
+		        event.consume();
+		    }
+		});
+		
 		couplingMonoPower.setOnDragDetected(new EventHandler<MouseEvent>() {
 		    public void handle(MouseEvent event) {
 		        /* drag was detected, start a drag-and-drop gesture*/
@@ -143,6 +177,51 @@ public class EMRController {
 		        
 		        /* Put a string on a dragboard */
 		        content.putString("couplingMonoPower");
+		        statusLabel.setText(content.getString());
+		        db.setContent(content);
+		        
+		        event.consume();
+		    }
+		});
+		
+		amplificationGreaterPower.setOnDragDetected(new EventHandler<MouseEvent>() {
+		    public void handle(MouseEvent event) {
+		        /* drag was detected, start a drag-and-drop gesture*/
+		        /* allow any transfer mode */
+		        db = amplificationGreaterPower.startDragAndDrop(TransferMode.ANY);
+		        
+		        /* Put a string on a dragboard */
+		        content.putString("amplificationGreaterPower");
+		        statusLabel.setText(content.getString());
+		        db.setContent(content);
+		        
+		        event.consume();
+		    }
+		});
+		
+		amplificationLowerPower.setOnDragDetected(new EventHandler<MouseEvent>() {
+		    public void handle(MouseEvent event) {
+		        /* drag was detected, start a drag-and-drop gesture*/
+		        /* allow any transfer mode */
+		        db = amplificationLowerPower.startDragAndDrop(TransferMode.ANY);
+		        
+		        /* Put a string on a dragboard */
+		        content.putString("amplificationLowerPower");
+		        statusLabel.setText(content.getString());
+		        db.setContent(content);
+		        
+		        event.consume();
+		    }
+		});
+		
+		couplingMultiPower.setOnDragDetected(new EventHandler<MouseEvent>() {
+		    public void handle(MouseEvent event) {
+		        /* drag was detected, start a drag-and-drop gesture*/
+		        /* allow any transfer mode */
+		        db = couplingMultiPower.startDragAndDrop(TransferMode.ANY);
+		        
+		        /* Put a string on a dragboard */
+		        content.putString("couplingMultiPower");
 		        statusLabel.setText(content.getString());
 		        db.setContent(content);
 		        
@@ -217,7 +296,37 @@ public class EMRController {
 		        		drawingBoard.getChildren().add(newArrow);
 		        		statusLabel.setText("Dropped");
 		        		success = true;
-		        	} 
+		        	} else if (content.getString().equals("conversionMonoPower")){
+		        		Shape newArrow = shapeFactory.getShape(ShapeEMRFactory.eshape.conversionMonoPower, event.getX(), 
+		        				event.getY(), "#FFD700", "#FF0000").createShape();
+		        		drawingBoard.getChildren().add(newArrow);
+		        		statusLabel.setText("Dropped");
+		        		success = true;
+		        	} else if (content.getString().equals("conversionMultiPower")){
+		        		Shape newArrow = shapeFactory.getShape(ShapeEMRFactory.eshape.conversionMultiPower, event.getX(), 
+		        				event.getY(), "#FFD700", "#FF0000").createShape();
+		        		drawingBoard.getChildren().add(newArrow);
+		        		statusLabel.setText("Dropped");
+		        		success = true;
+		        	} else if (content.getString().equals("amplificationGreaterPower")){
+		        		Shape newArrow = shapeFactory.getShape(ShapeEMRFactory.eshape.amplificationGreaterPower, event.getX(), 
+		        				event.getY(), "#FFD700", "#FF0000").createShape();
+		        		drawingBoard.getChildren().add(newArrow);
+		        		statusLabel.setText("Dropped");
+		        		success = true;
+		        	} else if (content.getString().equals("amplificationLowerPower")){
+		        		Shape newArrow = shapeFactory.getShape(ShapeEMRFactory.eshape.amplificationLowerPower, event.getX(), 
+		        				event.getY(), "#FFD700", "#FF0000").createShape();
+		        		drawingBoard.getChildren().add(newArrow);
+		        		statusLabel.setText("Dropped");
+		        		success = true;
+		        	} else if (content.getString().equals("couplingMultiPower")){
+		        		Shape newArrow = shapeFactory.getShape(ShapeEMRFactory.eshape.couplingMultiPower, event.getX(), 
+		        				event.getY(), "#FFD700", "#FF0000").createShape();
+		        		drawingBoard.getChildren().add(newArrow);
+		        		statusLabel.setText("Dropped");
+		        		success = true;
+		        	}
 		        }
 		        /* let the source know whether the string was successfully 
 		         * transferred and used */
