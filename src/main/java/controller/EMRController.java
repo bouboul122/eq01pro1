@@ -111,11 +111,10 @@ public class EMRController {
 		
 		powerSource.setOnDragDetected(new EventHandler<MouseEvent>() {
 		    public void handle(MouseEvent event) {
-		        /* drag was detected, start a drag-and-drop gesture*/
-		        /* allow any transfer mode */
+
 		        db = powerSource.startDragAndDrop(TransferMode.ANY);
 		        
-		        /* Put a string on a dragboard */
+
 		        content.putString("PowerSource");
 		        statusLabel.setText(content.getString());
 		        db.setContent(content);
@@ -126,11 +125,9 @@ public class EMRController {
 		
 		accumulationPower.setOnDragDetected(new EventHandler<MouseEvent>() {
 		    public void handle(MouseEvent event) {
-		        /* drag was detected, start a drag-and-drop gesture*/
-		        /* allow any transfer mode */
+
 		        db = accumulationPower.startDragAndDrop(TransferMode.ANY);
-		        
-		        /* Put a string on a dragboard */
+
 		        content.putString("accumulationPower");
 		        statusLabel.setText(content.getString());
 		        db.setContent(content);
@@ -141,11 +138,10 @@ public class EMRController {
 		
 		conversionMonoPower.setOnDragDetected(new EventHandler<MouseEvent>() {
 		    public void handle(MouseEvent event) {
-		        /* drag was detected, start a drag-and-drop gesture*/
-		        /* allow any transfer mode */
+
 		        db = conversionMonoPower.startDragAndDrop(TransferMode.ANY);
 		        
-		        /* Put a string on a dragboard */
+
 		        content.putString("conversionMonoPower");
 		        statusLabel.setText(content.getString());
 		        db.setContent(content);
@@ -156,11 +152,9 @@ public class EMRController {
 		
 		conversionMultiPower.setOnDragDetected(new EventHandler<MouseEvent>() {
 		    public void handle(MouseEvent event) {
-		        /* drag was detected, start a drag-and-drop gesture*/
-		        /* allow any transfer mode */
 		        db = conversionMultiPower.startDragAndDrop(TransferMode.ANY);
 		        
-		        /* Put a string on a dragboard */
+
 		        content.putString("conversionMultiPower");
 		        statusLabel.setText(content.getString());
 		        db.setContent(content);
@@ -171,11 +165,8 @@ public class EMRController {
 		
 		couplingMonoPower.setOnDragDetected(new EventHandler<MouseEvent>() {
 		    public void handle(MouseEvent event) {
-		        /* drag was detected, start a drag-and-drop gesture*/
-		        /* allow any transfer mode */
 		        db = couplingMonoPower.startDragAndDrop(TransferMode.ANY);
 		        
-		        /* Put a string on a dragboard */
 		        content.putString("couplingMonoPower");
 		        statusLabel.setText(content.getString());
 		        db.setContent(content);
@@ -186,11 +177,10 @@ public class EMRController {
 		
 		amplificationGreaterPower.setOnDragDetected(new EventHandler<MouseEvent>() {
 		    public void handle(MouseEvent event) {
-		        /* drag was detected, start a drag-and-drop gesture*/
-		        /* allow any transfer mode */
+
 		        db = amplificationGreaterPower.startDragAndDrop(TransferMode.ANY);
 		        
-		        /* Put a string on a dragboard */
+
 		        content.putString("amplificationGreaterPower");
 		        statusLabel.setText(content.getString());
 		        db.setContent(content);
@@ -201,11 +191,10 @@ public class EMRController {
 		
 		amplificationLowerPower.setOnDragDetected(new EventHandler<MouseEvent>() {
 		    public void handle(MouseEvent event) {
-		        /* drag was detected, start a drag-and-drop gesture*/
-		        /* allow any transfer mode */
+
 		        db = amplificationLowerPower.startDragAndDrop(TransferMode.ANY);
 		        
-		        /* Put a string on a dragboard */
+
 		        content.putString("amplificationLowerPower");
 		        statusLabel.setText(content.getString());
 		        db.setContent(content);
@@ -216,11 +205,10 @@ public class EMRController {
 		
 		couplingMultiPower.setOnDragDetected(new EventHandler<MouseEvent>() {
 		    public void handle(MouseEvent event) {
-		        /* drag was detected, start a drag-and-drop gesture*/
-		        /* allow any transfer mode */
+
 		        db = couplingMultiPower.startDragAndDrop(TransferMode.ANY);
 		        
-		        /* Put a string on a dragboard */
+
 		        content.putString("couplingMultiPower");
 		        statusLabel.setText(content.getString());
 		        db.setContent(content);
@@ -231,11 +219,10 @@ public class EMRController {
 		
 		arrow.setOnDragDetected(new EventHandler<MouseEvent>() {
 		    public void handle(MouseEvent event) {
-		        /* drag was detected, start a drag-and-drop gesture*/
-		        /* allow any transfer mode */
+
 		        db = powerSource.startDragAndDrop(TransferMode.ANY);
 		        
-		        /* Put a string on a dragboard */
+
 		        content.putString("Arrow");
 		        statusLabel.setText(content.getString());
 		        db.setContent(content);
@@ -246,13 +233,11 @@ public class EMRController {
 		
 		drawingBoard.setOnDragOver(new EventHandler<DragEvent>() {
 		    public void handle(DragEvent event) {
-		        /* data is dragged over the target */
-		        /* accept it only if it is not dragged from the same node 
-		         * and if it has a string data */
+
 		        if (event.getGestureSource() != drawingBoard &&
 		                event.getDragboard().hasString()) {
 		        	statusLabel.setText("Dragging");
-		            /* allow for both copying and moving, whatever user chooses */
+
 		            event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
 		        }
 		        
@@ -262,8 +247,6 @@ public class EMRController {
 		
 		drawingBoard.setOnDragDropped(new EventHandler<DragEvent>() {
 		    public void handle(DragEvent event) {
-		        /* data dropped */
-		        /* if there is a string data on dragboard, read it and use it */
 		        Dragboard db = event.getDragboard();
 		        boolean success = false;
 		        if (db.hasString()) {
@@ -328,8 +311,6 @@ public class EMRController {
 		        		success = true;
 		        	}
 		        }
-		        /* let the source know whether the string was successfully 
-		         * transferred and used */
 		        event.setDropCompleted(success);
 		        
 		        event.consume();

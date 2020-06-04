@@ -17,7 +17,6 @@ public class ControlStrategyElement extends ShapeEMR{
 	private int width;
 	public ControlStrategyElement(double xCoordinate, double yCoordinate, String mainColor, String borderColor) {
 		super(xCoordinate, yCoordinate, mainColor, borderColor);
-		// TODO Auto-generated constructor stub
 		height = 21;
 		width = height * 3;
 	}
